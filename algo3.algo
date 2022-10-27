@@ -1,0 +1,30 @@
+PROCEDURE dot_product(v1,v2:ARRAY_OF INTEGER[50],sum:INTEGER)
+VAR
+    sum:=0
+    i:INTEGER
+BEGIN
+if(v1.lenght<>v2.lenght)then
+write("the two vectors have diffrent lenght")
+else
+    FOR i FROM 0 TO v1.lenght STEP 1  DO
+         sum:=sum+(v1[i]*v2[i])
+     END_FOR
+    END_FOR
+end_if
+return sum
+END
+
+
+program checkpoint
+VAR
+v1,v2:ARRAY_OF INTEGER[50]
+sum:INTEGER
+BEGIN
+dot_product(v1,v2,sum)
+if (sum=0)then
+write("The two vectors are orthogonal")
+else
+write("The two vectors are not orthogonal")
+end_if
+END.
+
